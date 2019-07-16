@@ -4,10 +4,10 @@
 # Type: Selection Sort
 def selection_sort( arr ):
 
-    # loop through n-1 elements
+    # Starting from the first array element
+    # For each item in the array minus one
     for i in range(0, len(arr) - 1):
-
-        # Find next smallest element
+        # Find the smallest element in the unsorted portion of the array
         smallest_index = i
         for x in range(i+1,len(arr)):
             if arr[x] < arr[smallest_index]:
