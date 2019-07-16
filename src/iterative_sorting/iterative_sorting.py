@@ -35,21 +35,14 @@ def selection_sort( arr ):
 def bubble_sort( arr ):
     #Starting from the first array element
     #For each item in the array minus one
-    x = 0
-    while x < len(arr)-1:
-        #Starting from the first array element
+    for x in range(len(arr)-1):
         #For each array element that is unsorted
         #The amount of unsorted elements gets smaller each time the outer while loop finishes
-        y = 0
-        while y < len(arr)-x-1:
+        for y in range(len(arr)-x-1):
             if arr[y+1] < arr[y]:
                 #If the next array element is smaller than the current element
                 #Then swap them and reset index to 0
-                arr[y],arr[y+1] = arr[y+1], arr[y]
-            #Increment j
-            y += 1
-        #Increment i
-        x += 1
+                arr[y],arr[y+1] = arr[y+1],arr[y]
     return arr
 
 # Count Sort
