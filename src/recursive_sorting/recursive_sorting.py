@@ -1,9 +1,9 @@
-# TO-DO: complete the helper function below to merge 2 sorted arrays
+#Merge Sort Helper
 def merge( left, right ):
     # Make empty list to store the result
     result = []
     # While both lists have at least 1 item
-    while len(left) > 0 and len(right) > 0:
+    while len(left) and len(right):
         if left[0] < right[0]:
             # If the first item on the left is smaller than the first on the right
             # Then append it to the result and remove it from the left
@@ -16,16 +16,10 @@ def merge( left, right ):
             right = right[1:]
 
     # If there is 1 item left in the left or right
-    # Then append it to the result
-    # Only one of these can be true (Otherwise we'd still be in the while loop)
-    if len(left) > 0:
-        result = result + left
-    if len(right) > 0:
-        result = result + right
-    return result
+    # Then append their values to the result
+    return  result + left + right
 
-
-# Merge Sort
+# Merge Sort Main
 # O(n log(n))
 # One of the better sorting runtimes out there
 # Many native sort() functions use Merge Sort
@@ -47,7 +41,6 @@ def merge_sort( arr ):
     #If the last array item on the left is smaller than the first array item on the left
     #Then combine them and return it.. they are in order
     if left[-1] < right[0]:
-        print(f"L: {left} \nR: {right}")
         return left + right
     
     #Else return the merged arrays bc there's more sorting to do
