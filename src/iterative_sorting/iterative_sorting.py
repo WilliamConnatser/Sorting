@@ -1,10 +1,13 @@
-# TO-DO: Complete the selection_sort() function below 
+# Selection Sort
+# O(n^2) comparisons, O(n) swaps
+# Stable Sort
+# Type: Selection Sort
 def selection_sort( arr ):
 
-    # loop through n-1 elements
+    # Starting from the first array element
+    # For each item in the array minus one
     for i in range(0, len(arr) - 1):
-
-        # Find next smallest element
+        # Find the smallest element in the unsorted portion of the array
         smallest_index = i
         for x in range(i+1,len(arr)):
             if arr[x] < arr[smallest_index]:
@@ -16,8 +19,8 @@ def selection_sort( arr ):
         '''
         #Get smallest index of unsorted list
         unsorted_list = arr[i:]
-        smallest_index = arr.index(min(unsorted_list)) 
-        '''  
+        smallest_index = arr.index(min(unsorted_list))
+        '''
         
         # Swap min value to current index
         arr[i],arr[smallest_index] = arr[smallest_index],arr[i]
@@ -25,24 +28,28 @@ def selection_sort( arr ):
     return arr
 
 
-# TO-DO:  implement the Bubble Sort function below
+# Bubble Sort
+# O(n^2) Comparison, O(n^2) Swaps
+# Stable Sort
+# Type: Exchange Sort
 def bubble_sort( arr ):
     #Starting from the first array element
-    i = 0
-    #While i < length of array minus one
-    while i < len(arr)-1: 
-        if arr[i+1] < arr[i]:
-            #If the next array element is smaller than the current element
-            #Then swap them and reset index to 0
-            arr[i],arr[i+1] = arr[i+1], arr[i]
-            i = 0
-        else:
-            #Else increment i
-            i += 1
+    #For each item in the array minus one
+    for x in range(len(arr)-1):
+        #For each array element that is unsorted
+        #The amount of unsorted elements gets smaller each time the outer while loop finishes
+        for y in range(len(arr)-x-1):
+            if arr[y+1] < arr[y]:
+                #If the next array element is smaller than the current element
+                #Then swap them and reset index to 0
+                arr[y],arr[y+1] = arr[y+1],arr[y]
     return arr
 
-
-# STRETCH: implement the Count Sort function below
+# Count Sort
+# O(n+k) where k is the range of the non-negative key values
+# Stable Sort
+# Type: Distribution Sort
 def count_sort( arr, maximum=-1 ):
-
+    #Make a list that stores the number of times each integer occurs
+    #Compute the cumulative total of matches from starting at index 0
     return arr
